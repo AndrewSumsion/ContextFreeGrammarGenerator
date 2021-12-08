@@ -1,4 +1,4 @@
-package assign11;
+package comprehensive;
 
 import java.io.IOException;
 import java.util.Random;
@@ -23,11 +23,12 @@ public class RandomPhraseGenerator {
         Grammar grammar = GrammarReader.readGrammar(args[0]);
         StringBuilder builder = new StringBuilder();
 
+        FastRandom random = new FastRandom();
         int N = Integer.parseInt(args[1]);
         for(int i = 0; i < N; i++) {
-            grammar.generateString(builder, new Random());
+            grammar.generateString(builder, random);
             builder.append('\n');
         }
-        System.out.println(builder);
+        System.out.print(builder);
     }
 }

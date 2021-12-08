@@ -15,9 +15,9 @@ public class RandomPhraseGenerator {
 
         int N = Integer.parseInt(args[1]);
         for(int i = 0; i < N; i++) {
-            builder.setLength(0);
             grammar.generateString(builder, new Random());
-            System.out.println(builder);
+            builder.append('\n');
         }
+        System.out.println(builder);
     }
 }
